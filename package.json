@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "Rest API para la web de fonefo\u001b[D\u001b[D\u001b[D\u001b[D\u001b[F\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[D\u001b[\u001b[C\u001b[D",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node --watch ./index.js"
   },
   "keywords": [
     "express",
@@ -20,5 +21,8 @@
     "niños"
   ],
   "author": "Nicolas Lopez Castiblancov <nicolaslopezcastiblanco@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }
