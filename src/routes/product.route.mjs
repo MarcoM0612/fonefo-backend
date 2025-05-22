@@ -3,7 +3,7 @@ import {Router} from 'express'  //importando router de express
 const router = Router();       //preparando router para definir rutas
 
 //definimos las rutas de acceso
-router.get( '/api/products', (req,res) => {
+router.get( '/api/productos', (req,res) => {
     res.send( 'obtiene todos los productos' )
 } )
 

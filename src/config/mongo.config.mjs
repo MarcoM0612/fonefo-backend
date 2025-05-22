@@ -1,12 +1,12 @@
-import mongoose from 'mongoose'
+import mongoose from 'mongoose';
 
 //definimos una funcion asincronica para definir la configuracion del ODM mongoose para usar mongoDB
 async function dbconnect () {
 
     try {
-        await mongoose.connect ('mongodb://localhost:27017/db-fonefo',{})
+        await mongoose.connect ('mongodb://localhost:27017/db-fonefo',{});
 
-        console.log('Base de datos conectada exitosamente')
+        console.log('Base de datos conectada exitosamente');
     }
     catch (error) {
         console.error(error)
@@ -14,4 +14,4 @@ async function dbconnect () {
     }
 }
 
-export default dbconnect
+export default dbconnect;
