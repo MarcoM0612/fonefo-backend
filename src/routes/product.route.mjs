@@ -7,23 +7,23 @@ router.get( '/api/products', (req,res) => {
     res.send( 'obtiene todos los productos' )
 } )
 
-router.post( '/api/productos', ( req,res) => {
+router.post( '/api/products', ( req,res) => {
     res.send ('crear un producto')
 })
 
-router.patch( '/api/productos', ( req,res) => {
+router.patch( '/api/products', ( req,res) => {
     res.send ('Actualización parcial de un producto')
 })
 
-router.put( '/api/productos', ( req,res) => {
+router.put( '/api/products', ( req,res) => {
     res.send ('Actualización total de un producto')
 })
 
-router.put( '/api/productos', ( req,res) => {
+router.put( '/api/products', ( req,res) => {
     res.send ('Actualización total de un producto')
 })
 
-router.delete( '/api/productos', ( req,res) => {
+router.delete( '/api/products', ( req,res) => {
     res.send ('Elimina un producto')
 })
 
