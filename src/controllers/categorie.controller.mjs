@@ -7,9 +7,10 @@ const createCategorie = async ( req,res) => {
     try {
         const dataCategorie = await caterorieModel.create(inputData)
         console.log(dataCategorie)
-        res.send(dataCategorie)
+        res.json(dataCategorie)
     } catch (error) {
-        console.log("*** ERROR AL INGRENSAR DATOS, VERIFIQUE NUEVAMENETE ***")
+        console.error(error)
+        res.json({msg:"*** ERROR AL INGRENSAR DATOS, VERIFIQUE NUEVAMENETE ***"})
     }
 }
 
