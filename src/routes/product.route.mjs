@@ -1,26 +1,26 @@
 // routes nos sirve para definir los endpoints de una entidad
-import {Router} from 'express'  //importando router de express
-const router = Router();       //preparando router para definir rutas
+import express from 'express'  //importando router de express
+import { createProduct } from '../controllers/product.controller.mjs'
+const router = express.Router()       //preparando router para definir rutas
 
-//definimos las rutas de acceso
-router.get( '/api/productos', (req,res) => {
-    res.send( 'obtiene todos los productos' )
-} )
+//definimos las rutas de acceso y las vincula a su respectivo controlador
 
-router.post( '/api/productos', ( req,res) => {
-    res.send ('crear un producto')
-})
 
-router.patch( '/api/productos', ( req,res) => {
-    res.send ('Actualización parcial de un producto')
-})
+router.post( '/api/product',createProduct)
 
-router.put( '/api/productos', ( req,res) => {
-    res.send ('Actualización total de un producto')
-})
-
-router.delete( '/api/productos', ( req,res) => {
-    res.send ('Elimina un producto')
-})
 
 export default router;         // exportando todas las rutas de esta entidad para ser usadas en cualquier parte de la aplicacion
+
+// router.get( '/api/productos', createProduct )
+// router.patch( '/api/productos', ( req,res) => {
+//     res.send ('Actualización parcial de un producto')
+// })
+
+// router.put( '/api/productos', ( req,res) => {
+//     res.send ('Actualización total de un producto')
+// })
+
+// router.delete( '/api/productos', ( req,res) => {
+//     res.send ('Elimina un producto')
+// })
+

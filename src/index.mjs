@@ -10,6 +10,7 @@ const app = express()
 //invocar la configuracion de la conexion a la base de datos
 dbconnect()
 
+app.use(express.json())
 app.use( product );         //implementar la ruta como middleware de express
 
 // paso 4: lanzamos el servidor web usando express en el puerto 3000
