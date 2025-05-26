@@ -20,8 +20,22 @@ const createUser = async ( req,res) => {
     
 }
 
+const getAlluser = async ( req,res ) => {
+
+    try {
+        const data = await userModel.find({});
+    res.json( data );
+
+    } catch (error) {
+        console.error( error );
+        res.json({ msg: 'Error: no se pudo obtener el listado de usuarios'})
+    }
+
+}
+
 
 //Exponiendo las funcionalidades de este archivo usando el export
 export {
-    createUser
+    createUser,
+    getAlluser
 }
