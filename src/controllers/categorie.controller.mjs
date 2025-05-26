@@ -1,6 +1,6 @@
 import caterorieModel from "../schemas/categorie.schema.mjs"
 
-const createCategorie = async ( req,res) => {
+const createCategorie = async (req,res) => {
     const inputData = req.body
 
 
@@ -14,6 +14,17 @@ const createCategorie = async ( req,res) => {
     }
 }
 
+const getAllProducts = async (req,res) => {
+    try {
+        const dataCategorie = await caterorieModel.find({})
+        res.json(dataCategorie)
+    } catch (error) {
+        console.error(error)
+        res.json({msg:"*** ERROR AL OBTENER LOS DATOS, VERIFIQUE NUEVAMENETE ***"})
+    }
+}
+
 export{
-    createCategorie
+    createCategorie,
+    getAllProducts
 }

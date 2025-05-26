@@ -2,15 +2,12 @@
 import {Router} from 'express'  //importando router de express
 const router = Router();       //preparando router para definir rutas
 
-import {createCategorie} from '../controllers/categorie.controller.mjs'
+import {createCategorie, getAllProducts} from '../controllers/categorie.controller.mjs'
 
 
 //definimos las rutas de acceso
-router.get( '/api/categories', (req,res) => {
-    res.send( 'obtiene todos las categorias' )
-} )
-
 router.post( '/api/categories', createCategorie)
+router.get( '/api/categories', getAllProducts)
 
 router.patch( '/api/categories', ( req,res) => {
     res.send ('Actualización parcial de una categoria')
