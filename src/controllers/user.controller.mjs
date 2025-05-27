@@ -33,9 +33,34 @@ const getAlluser = async ( req,res ) => {
 
 }
 
+const getUserById = async ( req,res ) => {
+    const userId = req.params.id;  // El nombre final dependera del nombre del parametro de la rutra
+
+    try {
+        const data =await userModel.findById( userId ); 
+        //Verifica si el producto no existe y lanza el respoectivo mensaje al cliente
+        if ( ! data ) {
+            return res.json({ msg: 'No se encuentra el usuario registrado'});
+        }
+    res.json ( data );
+    } 
+    catch (error) {
+        console.error( error );
+        res.json({ msg: 'Error: no se pudo encontrar el registro'})
+    }
+
+
+    
+    
+
+
+
+}
+
 
 //Exponiendo las funcionalidades de este archivo usando el export
 export {
     createUser,
-    getAlluser
+    getAlluser,
+    getUserById
 }
