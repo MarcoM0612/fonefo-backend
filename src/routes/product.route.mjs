@@ -19,10 +19,6 @@ router.put( '/api/products', ( req,res) => {
     res.send ('Actualización total de un producto')
 })
 
-router.put( '/api/products', ( req,res) => {
-    res.send ('Actualización total de un producto')
-})
-
 router.delete( '/api/products', ( req,res) => {
     res.send ('Elimina un producto')
 })

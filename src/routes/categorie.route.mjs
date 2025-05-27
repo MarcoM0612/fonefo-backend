@@ -2,27 +2,14 @@
 import {Router} from 'express'  //importando router de express
 const router = Router();       //preparando router para definir rutas
 
-import {createCategorie, getAllProducts} from '../controllers/categorie.controller.mjs'
+import {createCategorie, getAllCategories, getCategorieById, removeCategorieById, updateCategorieById} from '../controllers/categorie.controller.mjs'
 
 
 //definimos las rutas de acceso
-router.post( '/api/categories', createCategorie)
-router.get( '/api/categories', getAllProducts)
-
-router.patch( '/api/categories', ( req,res) => {
-    res.send ('Actualización parcial de una categoria')
-})
-
-router.put( '/api/categories', ( req,res) => {
-    res.send ('Actualización total de una categoria')
-})
-
-router.put( '/api/categories', ( req,res) => {
-    res.send ('Actualización total de una categoria')
-})
-
-router.delete( '/api/categories', ( req,res) => {
-    res.send ('Elimina una categoria')
-})
+router.post( '/api/categories', createCategorie) // Crea una categoria
+router.get( '/api/categories', getAllCategories) // Obtine todas las categorias
+router.get( '/api/categories/:id', getCategorieById) // Obtine una categoria por ID
+router.delete( '/api/categories/:id', removeCategorieById) // Elimina una categoria por ID
+router.patch( '/api/categories/:id', updateCategorieById ) // Actualiza una caregoria parcial por ID
 
 export default router;         // exportando todas las rutas de esta entidad para ser usadas en cualquier parte de la aplicacion
