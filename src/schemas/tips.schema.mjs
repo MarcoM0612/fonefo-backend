@@ -5,6 +5,7 @@ import mongoose from "mongoose";
 const tipsSchema = new mongoose.Schema({
     titulo: {
         type: String,
+        unique: true,
         trim: true,     
         required: false // TODO: Revisar por que al poner required en true no deja registrar
     },
