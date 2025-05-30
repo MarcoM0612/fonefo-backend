@@ -22,8 +22,9 @@
   "author": "Nicolas Lopez Castiblancov <nicolaslopezcastiblanco@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^6.0.0",      
+    "bcrypt": "^6.0.0",
     "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.15.0"
   }
 }
