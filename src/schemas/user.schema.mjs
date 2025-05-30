@@ -28,8 +28,8 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         required: [true, 'La contraseña es obligatoria.'],
-        max: [ 12, 'La contraseña debe tener maximo 12 caracteres'],
-        minlength: [6, 'La contraseña debe tener al menos 6 caracteres.'],
+        // max: [ 12, 'La contraseña debe tener maximo 12 caracteres'],
+        // minlength: [6, 'La contraseña debe tener al menos 6 caracteres.'],
     },
     role: {
         type: String,
