@@ -20,6 +20,7 @@ app.use( user );
 app.use( express.json ())      // Habilita el interprete de objetos json
 
 // Endpoint: http://localhost:3000/
+
 app.use( product );         //implementar la ruta como middleware de express
 app.use ( tips );            // Vincular las rutas para la entudad Tips 
 
