@@ -4,7 +4,6 @@ const router = Router();       //preparando router para definir rutas
 
 import {createCategorie, getAllCategories, getCategorieById, removeCategorieById, updateCategorieById} from '../controllers/categorie.controller.mjs'
 
-
 //definimos las rutas de acceso
 router.post( '/api/categories', createCategorie) // Crea una categoria
 router.get( '/api/categories', getAllCategories) // Obtine todas las categorias
