@@ -1,6 +1,6 @@
 import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
 import userModel from "../schemas/user.schema.mjs";
+import { generateToken } from "../helpers/jwt.helper.mjs";
 
 // Authentication 
 const loginUser = async(req, res ) => {
@@ -26,13 +26,7 @@ const loginUser = async(req, res ) => {
         role: userFound.role
     }; 
 
-    const JWT_SECRET = '45644FDGSSFDHG74'
-
-    const token = jwt.sign(
-        payload,             //Carga util
-        JWT_SECRET,          //Palabra semilla o secreta 
-        { expiresIn: '1h' }  //Opciones de configuración del token
-    );
+    const token = generateToken( payload );
 
     //paso 5: Eliminar algunas propiedades que traen datos sencibles 
     const objsUser = userFound.toObject ();     //conertir un objeto Json en Objeto Javascript
@@ -50,13 +44,7 @@ const loginUser = async(req, res ) => {
 const reNewToken = (req, res) => {
     const payload = req.authUser;
 
-    const JWT_SECRET = '45644FDGSSFDHG74'
-
-    const token = jwt.sign(
-        payload,             //Carga util
-        JWT_SECRET,          //Palabra semilla o secreta 
-        { expiresIn: '1h' }  //Opciones de configuración del token
-    );
+    const token = generateToken(payload)
 
     res.json({ token });
 }

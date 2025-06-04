@@ -1,4 +1,5 @@
-import jwt from "jsonwebtoken";
+
+import { verifyToken } from "../helpers/jwt.helper.mjs";
 
 //Middleware
 const authUser = (req, res, next ) => {
@@ -8,11 +9,8 @@ const authUser = (req, res, next ) => {
     if (! token ) {
         return res.json({ msg: 'Error: Al obtener el token'});
     }
-
-
-    const JWT_SECRET = '45644FDGSSFDHG74'
     
-    const payload = jwt.verify( token, JWT_SECRET );
+    const payload = verifyToken ( token );
     
     //Eliminamos propiedades adicionales
     delete payload.iat;
