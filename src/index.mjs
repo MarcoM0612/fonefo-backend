@@ -2,7 +2,7 @@
 //const express = require('express') // commonJS
 import express from 'express'  // ESModule
 import user from './routes/categorie.route.mjs' //importamos las rutas de la entidad
-import categorie from './routes/user.route.mjs' 
+import categorie from './routes/categorie.route.mjs' 
 import tips from "./routes/tips.router.mjs";
 import product from './routes/product.route.mjs' //importamos las rutas de la entidad
 import auth from "./routes/auth.router.mjs";
