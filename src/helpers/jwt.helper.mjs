@@ -1,13 +1,11 @@
 import jwt from "jsonwebtoken";
 
-const JWT_SECRET = '45644FDGSSFDHG74'
-
 const generateToken = (payload) => {
 
     const token = jwt.sign(
-            payload,             //Carga util
-            JWT_SECRET,          //Palabra semilla o secreta 
-            { expiresIn: '1h' }  //Opciones de configuración del token
+            payload,                         //Carga util
+            process.env.JWT_SECRET,          //Palabra semilla o secreta 
+            { expiresIn: '1h' }               //Opciones de configuración del token
         );
 
         return token;
@@ -16,7 +14,7 @@ const generateToken = (payload) => {
 const verifyToken = (token) => {
     const payload = jwt.verify( 
         token,                     //Token Valido
-        JWT_SECRET                //Palabra  semilla o secreta 
+        process.env.JWT_SECRET,                //Palabra  semilla o secreta 
     );
 
     return payload;

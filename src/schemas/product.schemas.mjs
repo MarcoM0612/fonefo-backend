@@ -23,8 +23,8 @@ const productSchema = new mongoose.Schema ({
         default: 1
     },
     category: {
-        type:String,
-        default: 'not-category'
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "categories"
     },
     urlImage: {
         type: String
@@ -33,7 +33,10 @@ const productSchema = new mongoose.Schema ({
         type: String,
         default: true
     },
-
+    tips: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "tips"
+    },
     
 
 },{

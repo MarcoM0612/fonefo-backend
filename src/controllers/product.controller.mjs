@@ -5,13 +5,13 @@ const createProduct = async (req,res) => {
     const InputData = req.body
 
     try {
-        const registeredProduct = await productmodel.create(inputData)
+        const registeredProduct = await productmodel.create(InputData)
 
         console.log(registeredProduct)
         res.status(201).json(registeredProduct)
 
     }
-    catch{
+    catch ( error ) {
         console.log(error)
         res.status(500).json({ msg: "Error: No se pudo registrar el producto"})
     }
@@ -24,7 +24,7 @@ const createProduct = async (req,res) => {
 const getALLproducts = async (req,res) => {
 
     try {
-        const data = await productmodel .find({})
+        const data = await productmodel .find({}).populate(['category'])
     res.json( data )
     }
     catch (error){
@@ -37,7 +37,7 @@ const getProductById = async (req,res) => {
     const productId = req.params.id
     
     try{
-        const data = await productmodel.findById(productId)
+        const data = await productmodel.findById(productId).populate(['category'])
 
         if(!data ){
             return res.json({msg:'El producto no se encuentra registrado'})

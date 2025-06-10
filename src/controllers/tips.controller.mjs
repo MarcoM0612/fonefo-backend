@@ -25,7 +25,7 @@ const createTips = async (req, res) => {
 const getAllTips = async (req, res) => {
 
     try {
-        const data = await tipsModel.find({});
+        const data = await tipsModel.find({}).populate(['autor']);
         res.status(200).json(data);
     }
     catch (error) {
@@ -39,7 +39,7 @@ const tipsGetById = async (req, res) => {
     const tipsid = req.params.id;
 
     try {
-        const data = await tipsModel.findById(tipsid);
+        const data = await tipsModel.findById(tipsid).populate(['autor']);
         // data == null --> equivale a --> ! data
         if (!data) {
             return res.json({ msg: 'Tips no encontrado por id' })

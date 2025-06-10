@@ -18,16 +18,6 @@ const tipsSchema = new mongoose.Schema({
         enum: ['uso', 'educativo', 'seguridad', 'psicomotor', 'otro'],
         default: 'otro'
     },
-    productoId: {
-        type: String,
-        ref: 'Producto',
-        default: null
-    },
-    categoriaId: {
-        type: String,
-        ref: 'Categoria',
-        default: null
-    },
     edadRecomendada: {
         type: String,
         default: ''
@@ -37,8 +27,8 @@ const tipsSchema = new mongoose.Schema({
         default: ''
     },
     autor: {
-        type: String,
-        default: 'Equipo Fonefo'
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "users"
     },
     fechaPublicacion: {
         type: Date,
