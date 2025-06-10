@@ -33,7 +33,10 @@ const productSchema = new mongoose.Schema ({
         type: String,
         default: true
     },
-
+    tips: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "tips"
+    },
     
 
 },{

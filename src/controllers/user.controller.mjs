@@ -8,7 +8,6 @@ const createUser = async (req, res) => {
     try {
         // Paso 1: Verificar si el usuario existe
         const userFound = await userModel.findOne({
-            username: inputData.username,
             email: inputData.email
         });
 
@@ -30,6 +29,7 @@ const createUser = async (req, res) => {
 
         // Paso 3: Registrar el usuario
         const data = await userModel.create(inputData);
+        console.log(data)
 
         // Paso 4: Responder al cliente que se registro existosamente
         res.status(201).json(data);

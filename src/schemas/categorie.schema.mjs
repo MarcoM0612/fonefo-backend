@@ -21,7 +21,7 @@ const categorieSchema = new mongoose.Schema({
 })
 
 const caterorieModel = mongoose.model(
-    'Categories',
+    'categories',
     categorieSchema
 )
 

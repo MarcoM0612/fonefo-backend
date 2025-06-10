@@ -1,10 +1,12 @@
 import mongoose from 'mongoose';
 
+const DB_URI = process.env.DB_URI ?? 'mongodb://localhost:27017/db-fonefo'    // ?? Operador de coalesencia 
+
 //definimos una funcion asincronica para definir la configuracion del ODM mongoose para usar mongoDB
 async function dbconnect () {
 
     try {
-        await mongoose.connect ('mongodb://localhost:27017/db-fonefo',{});
+        await mongoose.connect ( DB_URI, {} );
 
         console.log('Base de datos conectada exitosamente');
     }
