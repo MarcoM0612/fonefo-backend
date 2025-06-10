@@ -23,7 +23,6 @@ const authUser = (req, res, next ) => {
     next();
 }
 
-
 export {
     authUser
 }

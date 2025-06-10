@@ -23,8 +23,8 @@ const productSchema = new mongoose.Schema ({
         default: 1
     },
     category: {
-        type:String,
-        default: 'not-category'
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Categories"
     },
     urlImage: {
         type: String
