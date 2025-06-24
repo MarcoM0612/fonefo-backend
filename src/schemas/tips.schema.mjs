@@ -15,11 +15,12 @@ const tipsSchema = new mongoose.Schema({
     },
     tipo: {
         type: String,
-        enum: ['uso', 'educativo', 'seguridad', 'psicomotor', 'otro'],
+        enum: ['motricidad','lectura','uso', 'educativo', 'seguridad', 'psicomotor', 'juego', 'otro'],
         default: 'otro'
     },
     edadRecomendada: {
         type: String,
+        enum: ['0-12 meses','1-3 años','2-5 años', '5-12 años'],
         default: ''
     },
     imagen: {
@@ -28,12 +29,9 @@ const tipsSchema = new mongoose.Schema({
     },
     autor: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "users"
+        ref: "users",
     },
-    fechaPublicacion: {
-        type: Date,
-        default: Date.now
-    },
+    
     destacado: {
         type: Boolean,
         default: false

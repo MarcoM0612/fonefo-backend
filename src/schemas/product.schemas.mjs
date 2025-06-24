@@ -37,6 +37,10 @@ const productSchema = new mongoose.Schema ({
         type: mongoose.Schema.Types.ObjectId,
         ref: "tips"
     },
+    isActive: { 
+        type: Boolean,
+        default: true 
+    },
     
 
 },{
