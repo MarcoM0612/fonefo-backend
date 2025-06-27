@@ -9,6 +9,7 @@ import product from './routes/product.route.mjs' //importamos las rutas de la en
 import auth from "./routes/auth.router.mjs";
 import dbconnect from './config/mongo.config.mjs'; //importamos la conexion a la base de daros
 import agerange from "./routes/agerange.routes.mjs";
+import order from "./routes/order.routes.mjs";
 
 // paso 2: invocamos la ejecucuin de express
 const app = express()
@@ -31,6 +32,7 @@ app.use( categorie );          //implementar la ruta como middleware de express
 app.use( product );            //implementar la ruta como middleware de express
 app.use ( tips );              // Vincular las rutas para la entudad Tips 
 app.use (agerange)
+app.use (order)
 
 // Endpoint: http://localhost:3000/
 

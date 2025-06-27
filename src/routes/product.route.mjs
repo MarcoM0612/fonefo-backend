@@ -8,7 +8,7 @@ const router = express.Router()       //preparando router para definir rutas
 //definimos las rutas de acceso y las vincula a su respectivo controlador
 
 
-router.post( '/api/product', authUser, createProduct)
+router.post( '/api/product', createProduct)
 router.get( '/api/product', getALLproducts)
 router.get( '/api/product/:id',getProductById)     //parametrizar la ruta
 router.delete('/api/product/:id',authUser, removeProductById)

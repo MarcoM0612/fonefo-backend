@@ -5,7 +5,7 @@ import { authUser } from "../middlewares/auth-user.middleware.mjs";
 const router = express.Router ();
 
 //Define las rutas para la entidad usuario 
-router.post('/api/tips', authUser, createTips);
+router.post('/api/tips', createTips);
 router.get( '/api/tips', getAllTips);
 
 
