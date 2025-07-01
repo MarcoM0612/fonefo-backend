@@ -12,7 +12,7 @@ router.get( '/api/tips', getAllTips);
 //Parametrizar las rutas 
 router.get( '/api/tips/:id', authUser, tipsGetById );
 router.patch( '/api/tips/:id', authUser, updateTipsById );
-router.delete( '/api/tips/:id', authUser, deleteTipsById)
+router.delete( '/api/tips/:id', deleteTipsById)
 
 
 export default router;
