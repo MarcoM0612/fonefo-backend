@@ -2,10 +2,12 @@ import productmodel from "../schemas/product.schemas.mjs"
 
 //
 const createProduct = async (req,res) => {
-    const InputData = req.body
+    const inputData = req.body
+    const userId = req.authUser._id
+    inputData.autor = userId
 
     try {
-        const registeredProduct = await productmodel.create(InputData)
+        const registeredProduct = await productmodel.create(inputData)
 
         console.log(registeredProduct)
         res.status(201).json(registeredProduct)
@@ -16,7 +18,7 @@ const createProduct = async (req,res) => {
         res.status(500).json({ msg: "Error: No se pudo registrar el producto"})
     }
 
-    const DataProduct = await productmodel.create(InputData)
+    const DataProduct = await productmodel.create(inputData)
     console.log(DataProduct)
     res.send(DataProduct)
 }
@@ -24,7 +26,7 @@ const createProduct = async (req,res) => {
 const getALLproducts = async (req,res) => {
 
     try {
-        const data = await productmodel .find({}).populate(['category'])
+        const data = await productmodel .find({}).populate(['category','autor','tips','ageRanges'])
     res.json( data )
     }
     catch (error){

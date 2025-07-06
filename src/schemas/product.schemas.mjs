@@ -22,25 +22,29 @@ const productSchema = new mongoose.Schema ({
         min: 1,
         default: 1
     },
-    category: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "categories"
-    },
     urlImage: {
         type: String
     },
     state: {
-        type: String,
+        type: Boolean,
         default: true
+    },
+    ageRanges: {
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'AgeRange' 
+    },
+    category: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "categories"
     },
     tips: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "tips"
     },
-    isActive: { 
-        type: Boolean,
-        default: true 
-    },
+    autor: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "users",
+        },
     
 
 },{

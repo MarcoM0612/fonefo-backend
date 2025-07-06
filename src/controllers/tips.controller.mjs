@@ -3,6 +3,8 @@ import tipsModel from "../schemas/tips.schema.mjs";
 
 const createTips = async (req, res) => {
     const inputData = req.body;
+    const userId = req.authUser._id
+    inputData.autor = userId
 
     try {
         const tipsFound = await tipsModel.findOne({ titulo: inputData.titulo })

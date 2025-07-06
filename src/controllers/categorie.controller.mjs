@@ -1,8 +1,9 @@
 import caterorieModel from "../schemas/categorie.schema.mjs"
 
 const createCategorie = async (req,res) => {
-    const inputData = req.body
-
+    const inputData = req.body 
+    const userId = req.authUser._id
+    inputData.autor = userId
 
     try {
         const dataCategorie = await caterorieModel.create(inputData)
@@ -16,7 +17,7 @@ const createCategorie = async (req,res) => {
 
 const getAllCategories = async (req,res) => {
     try {
-        const dataCategorie = await caterorieModel.find({})
+        const dataCategorie = await caterorieModel.find({}).populate(['autor'])
         res.json(dataCategorie)
     } catch (error) {
         console.error(error)
@@ -28,7 +29,7 @@ const getCategorieById = async (req,res) => {
     const idCategorie = req.params.id 
 
     try {
-        const dataCategorie = await caterorieModel.findById(idCategorie)
+        const dataCategorie = await caterorieModel.findById(idCategorie).populate(['autor'])
         if (!dataCategorie){
             return  res.json({msg:"*** ERROR, LA CATEGORIA NO EXISTE, VERIFIQUE EL ID... ***"})
         }
