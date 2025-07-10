@@ -37,7 +37,8 @@ const productSchema = new mongoose.Schema ({
         type: mongoose.Schema.Types.ObjectId,
         ref: "categories"
     },
-    tips: {
+    //TODO: evaluar la competencia del campo tips en este schema
+    tips: { 
         type: mongoose.Schema.Types.ObjectId,
         ref: "tips"
     },
