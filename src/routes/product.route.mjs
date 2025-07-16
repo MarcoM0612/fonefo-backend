@@ -4,11 +4,8 @@ import { createProduct, getALLproducts, getProductById, removeProductById, updat
 import { authUser } from "../middlewares/auth-user.middleware.mjs";
 
 const router = express.Router()       //preparando router para definir rutas
-import { authUser } from '../middlewares/auth-user.middleware.mjs'
 
 //definimos las rutas de acceso y las vincula a su respectivo controlador
-
-
 router.post( '/api/product', authUser, createProduct)
 router.get( '/api/product', authUser, getALLproducts)
 router.get( '/api/product/:id', authUser, getProductById)     //parametrizar la ruta
