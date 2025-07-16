@@ -11,7 +11,5 @@ router.get('/api/user/:id', authUser, getUserById );             //:id (Parametr
 router.delete( '/api/user/:id', authUser, removeUserById);
 router.patch( '/api/user/:id',  authUser, updateUserById );
 
-
-
 // Exponer el router de este archivo para ser usado por otros en la aplicación
 export default router;

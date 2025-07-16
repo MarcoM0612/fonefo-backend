@@ -9,13 +9,6 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: [true, 'El nombre del usuario es obligatorio.'],
         trim: true // Asegura que los espacios en blanco al inicio/final sean eliminados
-    }, 
-    /** username, puede ser: un correo, # identificacion, alias */
-    username: {
-        type: String,
-        required: [true, 'El nombre de usuario es obligatorio.'],
-        unique: true,
-        trim: true,
     },
     email: {
         type: String,
@@ -33,7 +26,6 @@ const userSchema = new mongoose.Schema({
     },
     role: {
         type: String,
-        required: [true, 'El rol del usuario es obligatorio.'],
         enum: {
             values: ['administrador', 'colaborador', 'registrado'],
             message: 'El rol {VALUE} no es válido. Los roles permitidos son: administrador, colaborador, registrado.'

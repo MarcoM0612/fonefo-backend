@@ -8,17 +8,10 @@ const router = express.Router ();
 router.post('/api/tips', authUser, createTips);
 router.get( '/api/tips', authUser, getAllTips);
 
-
 //Parametrizar las rutas 
-<<<<<<< HEAD
+
 router.get( '/api/tips/:id',authUser,  tipsGetById );
 router.patch( '/api/tips/:id',authUser, updateTipsById );
 router.delete( '/api/tips/:id',authUser, deleteTipsById)
-=======
-router.get( '/api/tips/:id', authUser, tipsGetById );
-router.patch( '/api/tips/:id', authUser, updateTipsById );
-router.delete( '/api/tips/:id', authUser, deleteTipsById)
->>>>>>> 29aaaa51f17a70676ac3beba271ac497040d82f0
-
 
 export default router;

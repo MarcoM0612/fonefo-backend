@@ -10,17 +10,10 @@ import { authUser } from '../middlewares/auth-user.middleware.mjs'
 
 
 router.post( '/api/product', authUser, createProduct)
-<<<<<<< HEAD
 router.get( '/api/product', authUser, getALLproducts)
 router.get( '/api/product/:id', authUser, getProductById)     //parametrizar la ruta
 router.delete('/api/product/:id', authUser, removeProductById)
 router.patch('/api/product/:id', authUser, updateProductById)
-=======
-router.get( '/api/product', getALLproducts)
-router.get( '/api/product/:id',getProductById)     //parametrizar la ruta
-router.delete('/api/product/:id',authUser, removeProductById)
-router.patch('/api/product/:id',authUser, updateProductById)
->>>>>>> 29aaaa51f17a70676ac3beba271ac497040d82f0
 
 export default router;         // exportando todas las rutas de esta entidad para ser usadas en cualquier parte de la aplicacion
 
