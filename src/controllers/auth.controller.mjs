@@ -6,6 +6,7 @@ import { generateToken } from "../helpers/jwt.helper.mjs";
 const loginUser = async(req, res ) => {
     // Pasi 1: Obtener los datos del body
     const inputData = req.body;
+
     //Paso 2: Verificar si el usuario existe (por favor registrarse )
     const userFound = await userModel.findOne({ email: inputData.email});
     if(!userFound){
