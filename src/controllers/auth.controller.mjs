@@ -21,8 +21,9 @@ const loginUser = async(req, res ) => {
     }
     //Paso 4: Generar credencial digital (Token)
     const payload = {
+        _id: userFound._id,
         name: userFound.name,
-        email: userFound.name,
+        email: userFound.email,
         role: userFound.role
     }; 
 

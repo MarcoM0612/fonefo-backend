@@ -22,21 +22,30 @@ const productSchema = new mongoose.Schema ({
         min: 1,
         default: 1
     },
-    category: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Categories"
-    },
     urlImage: {
         type: String
     },
     state: {
-        type: String,
+        type: Boolean,
         default: true
     },
-    tips: {
+    ageRanges: {
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'AgeRange' 
+    },
+    category: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "categories"
+    },
+    //TODO: evaluar la competencia del campo tips en este schema
+    tips: { 
         type: mongoose.Schema.Types.ObjectId,
         ref: "tips"
     },
+    autor: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "users",
+        },
     
 
 },{

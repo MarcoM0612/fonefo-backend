@@ -6,7 +6,7 @@ const router = express.Router ();
 
 //Define las rutas para la entidad usuario 
 router.post('/api/tips', authUser, createTips);
-router.get( '/api/tips', authUser, getAllTips);
+router.get( '/api/tips', getAllTips);
 
 //Parametrizar las rutas 
 

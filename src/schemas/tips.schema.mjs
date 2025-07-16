@@ -15,33 +15,17 @@ const tipsSchema = new mongoose.Schema({
     },
     tipo: {
         type: String,
-        enum: ['uso', 'educativo', 'seguridad', 'psicomotor', 'otro'],
+        enum: ['motricidad','lectura','uso', 'educativo', 'seguridad', 'psicomotor', 'juego', 'otro'],
         default: 'otro'
     },
-    edadRecomendada: {
-        type: String,
-        default: ''
-    },
-    imagen: {
-        type: String,
-        default: ''
+    state: {
+        type: Boolean,
+        default: true
     },
     autor: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "users"
+        ref: "users",
     },
-    fechaPublicacion: {
-        type: Date,
-        default: Date.now
-    },
-    destacado: {
-        type: Boolean,
-        default: false
-    },
-    activo: {
-        type: Boolean,
-        default: true
-    }
 }, {
     timestamps: true,
     versionKey: false
