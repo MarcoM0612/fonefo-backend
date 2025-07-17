@@ -18,8 +18,6 @@ const createProduct = async (req,res) => {
         res.status(500).json({ msg: "Error: No se pudo registrar el producto"})
     }
 
-    const DataProduct = await productmodel.create(inputData)
-    console.log(DataProduct)
     res.send(DataProduct)
 }
 
