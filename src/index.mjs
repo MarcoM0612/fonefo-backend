@@ -12,9 +12,15 @@ import agerange from "./routes/agerange.routes.mjs";
 import order from "./routes/order.routes.mjs";
 
 // paso 2: invocamos la ejecucuin de express
-const app = express()
+const app = express();
 
-const PORT = process.env.PORT ?? 3001
+console.log({
+    PORT: process.env.PORT,
+    JWT_SECRET: process.env.JWT_SECRET,
+    DB_URI: process.env.DB_URI
+})
+
+const PORT = process.env.PORT || 3001;
 
 // Invocar la base de datos.
 
@@ -41,5 +47,5 @@ app.use (order)
 //  lanzamos el servidor web usando express en el puerto 3000
 
 app.listen( PORT, () => {
-    console.log( `seridor lanzado exitosamente en http://localhost:${ PORT } ` );
+    console.log( `Servidor lanzado exitosamente en http://localhost:${ PORT } ` );
 } );
